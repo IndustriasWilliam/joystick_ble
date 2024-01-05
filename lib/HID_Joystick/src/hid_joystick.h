@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <BLEDevice.h>
+#include <NimBLEDevice.h>
 
 enum JOY_BUTTONS {
   JOY_A = 11,
@@ -29,7 +29,6 @@ class BLE_Client_Joystick {
     void loop();
     void set_connect_callback(connect_callback_t f) { connection_function = f; }
     connect_callback_t get_connect_callback() { return connection_function; }
-    
     void set_button_A_callback(button_callback_t f) {
       button_functions[JOY_A] = f;
     }
